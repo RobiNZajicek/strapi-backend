@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_blocks_registraces",
+  "info": {
+    "displayName": "Registrace"
+  },
+  "options": {},
+  "attributes": {
+    "nadpis": {
+      "type": "string"
+    },
+    "sport": {
+      "type": "string"
+    },
+    "jmeno": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "string"
+    },
+    "cislo": {
+      "type": "string"
+    },
+    "prijdu": {
+      "type": "string"
+    }
+  }
+}
