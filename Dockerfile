@@ -1,5 +1,5 @@
-# Základní image Strapi s Node.js
-FROM strapi/strapi:4.1.5
+# Použijte oficiální image s podporovanou verzí
+FROM strapi/strapi:4.11.1
 
 # Zkopíruje celý projekt do kontejneru
 COPY . .
