@@ -1,27 +1,17 @@
-// export default [
-//   'strapi::logger',
-//   'strapi::errors',
-//   'strapi::security',
-//   'strapi::cors',
-//   'strapi::poweredBy',
-//   'strapi::query',
-//   'strapi::body',
-//   'strapi::session',
-//   'strapi::favicon',
-//   'strapi::public',
-// ];
 module.exports = [
   'strapi::errors',
-  'strapi::security',
   {
-    name: 'strapi::cors',
+    name: 'strapi::security',
     config: {
-      origin: ['https://praguestrikingacademy.com'], // tvoje doména
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-      headers: '*',
-      credentials: true,
+      contentSecurityPolicy: {
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https://strapi-backend-app-8zq2.onrender.com'],
+        },
+      },
     },
   },
+  'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
