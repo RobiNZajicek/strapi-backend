@@ -1,5 +1,6 @@
 module.exports = [
-'strapi::errors',
+  // Povinné základní middlewares
+  'strapi::errors',
   {
     name: 'strapi::security',
     config: {
@@ -12,7 +13,7 @@ module.exports = [
             'data:',
             'blob:',
             'https://strapi-backend-app-8zq2.onrender.com',
-            'https://res.cloudinary.com' // DŮLEŽITÉ - přidáno pro Cloudinary
+            'https://render.com'
           ],
         },
       },
