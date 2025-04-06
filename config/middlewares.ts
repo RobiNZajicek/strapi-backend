@@ -1,22 +1,26 @@
 module.exports = [
-  'strapi::errors',
   {
     name: 'strapi::security',
     config: {
+      origin: [
+        'https://praguestrikingacademy.cz',
+        'https://strapi-backend-app-8zq2.onrender.com'
+      ],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       contentSecurityPolicy: {
+        useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https://strapi-backend-app-8zq2.onrender.com'],
+          'img-src': [
+            "'self'", 
+            'data:', 
+            'blob:', 
+            'https:', 
+            'https://strapi-backend-app-8zq2.onrender.com',
+            'https://render.com'
+          ],
         },
       },
     },
-  },
-  'strapi::cors',
-  'strapi::poweredBy',
-  'strapi::logger',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+  }
 ];
