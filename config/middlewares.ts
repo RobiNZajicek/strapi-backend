@@ -13,8 +13,9 @@ module.exports = [
             'data:',
             'blob:',
             'https://strapi-backend-app-8zq2.onrender.com',
-            'https://render.com',
-            'res.cloudinary.com'
+            'https://*.render.com',
+            'https://res.cloudinary.com',
+             'https://*.cloudinary.com'
           ],
         },
       },
