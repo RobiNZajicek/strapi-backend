@@ -1,6 +1,5 @@
 module.exports = [
-  // Povinné middlewares (musí být na začátku)
-  'strapi::errors',
+'strapi::errors',
   {
     name: 'strapi::security',
     config: {
@@ -13,24 +12,18 @@ module.exports = [
             'data:',
             'blob:',
             'https://strapi-backend-app-8zq2.onrender.com',
-            'https://render.com'
-          ],
-          'media-src': [
-            "'self'",
-            'data:',
-            'blob:',
-            'https://strapi-backend-app-8zq2.onrender.com'
+            'https://res.cloudinary.com' // DŮLEŽITÉ - přidáno pro Cloudinary
           ],
         },
       },
     },
   },
-  'strapi::cors',
+  'strapi::cors', // CORS middleware (výchozí nastavení)
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
   'strapi::session',
   'strapi::favicon',
-  'strapi::public', // Tento musí být vždy poslední
+  'strapi::public' // VŽDY poslední
 ];
