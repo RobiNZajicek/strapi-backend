@@ -6,15 +6,8 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'img-src': [
-            "'self'",
-            'data:',
-            'blob:',
-            'https://strapi-backend-app-8zq2.onrender.com',
-            'https://*.render.com',
-            'https://res.cloudinary.com',
-            'https://*.cloudinary.com'
-          ],
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
         },
       },
     },
@@ -22,13 +15,10 @@ module.exports = [
   {
     name: 'strapi::body',
     config: {
-      jsonLimit: '50mb',
-      formLimit: '50mb',
-      textLimit: '50mb',
-      formidable: {
-        maxFileSize: 50 * 1024 * 1024 // 50MB
-      }
-    }
+      formLimit: '20mb',
+      jsonLimit: '20mb',
+      textLimit: '20mb',
+    },
   },
   'strapi::cors',
   'strapi::poweredBy',
@@ -36,5 +26,5 @@ module.exports = [
   'strapi::query',
   'strapi::session',
   'strapi::favicon',
-  'strapi::public'
+  'strapi::public',
 ];
