@@ -131,6 +131,9 @@ export interface BlocksRecenze extends Struct.ComponentSchema {
   };
   attributes: {
     nadpis: Schema.Attribute.String;
+    obrazekPozadi: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     recenze: Schema.Attribute.Component<'elements.recenze-jedna', true>;
   };
 }
@@ -138,6 +141,7 @@ export interface BlocksRecenze extends Struct.ComponentSchema {
 export interface BlocksRegistrace extends Struct.ComponentSchema {
   collectionName: 'components_blocks_registraces';
   info: {
+    description: '';
     displayName: 'Registrace';
   };
   attributes: {
@@ -145,6 +149,7 @@ export interface BlocksRegistrace extends Struct.ComponentSchema {
     jmeno: Schema.Attribute.String;
     mail: Schema.Attribute.String;
     nadpis: Schema.Attribute.String;
+    obrazekPozadi: Schema.Attribute.Media<'images' | 'files'>;
     prijdu: Schema.Attribute.String;
     sport: Schema.Attribute.String;
   };

@@ -1,7 +1,8 @@
 {
   "collectionName": "components_blocks_registraces",
   "info": {
-    "displayName": "Registrace"
+    "displayName": "Registrace",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -22,6 +23,14 @@
     },
     "prijdu": {
       "type": "string"
+    },
+    "obrazekPozadi": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
