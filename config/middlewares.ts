@@ -8,6 +8,12 @@ module.exports = [
         directives: {
           'connect-src': ["'self'", 'https:'],
           'img-src': ["'self'", 'data:', 'blob:', 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'https://strapi-backend-app-8zq2.onrender.com',
+          ],
         },
       },
     },
