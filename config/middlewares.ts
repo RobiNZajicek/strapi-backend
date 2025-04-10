@@ -13,6 +13,7 @@ module.exports = [
             'data:',
             'blob:',
             'https://strapi-backend-app-8zq2.onrender.com',
+            // process.env.NEXT_PUBLIC_STRAPI_URL
           ],
         },
       },
