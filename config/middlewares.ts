@@ -36,7 +36,7 @@ module.exports = [
       // Přidány obě domény do povolených originů
       origin: [
         'https://praguestrikingacademy.cz',
-        'https://pv-striking.vercel.app',
+        'https://pv-projekt.vercel.app',
         'http://localhost:3000', // Můžeš přidat i localhost pro lokální vývoj
       ],
     },
