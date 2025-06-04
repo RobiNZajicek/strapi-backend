@@ -27,7 +27,20 @@ module.exports = [
       textLimit: '20mb',
     },
   },
-  'strapi::cors',
+  // Zde je upravená konfigurace pro CORS
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      // Přidány obě domény do povolených originů
+      origin: [
+        'https://praguestrikingacademy.cz',
+        'https://pv-striking.vercel.app',
+        'http://localhost:3000', // Můžeš přidat i localhost pro lokální vývoj
+      ],
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
@@ -35,3 +48,41 @@ module.exports = [
   'strapi::favicon',
   'strapi::public',
 ];
+
+// Tyto bloky patří do jiných konfiguračních souborů (např. config/server.js a config/plugins.js)
+// a neměly by být v config/middleware.js.
+// Ujisti se, že máš tyto konfigurace ve správných souborech.
+
+/*
+// Příklad pro config/server.js
+export default ({ env }) => ({
+  host: env('HOST', '0.0.0.0'),
+  port: env.int('PORT', 1337),
+  app: {
+    keys: env.array('APP_KEYS'),
+  },
+});
+*/
+
+/*
+// Příklad pro config/plugins.js
+module.exports = ({ env }) => ({
+  upload: {
+    config: {
+      provider: 'cloudinary',
+      providerOptions: {
+        cloud_name: env('CLOUDINARY_NAME'),
+        api_key: env('CLOUDINARY_KEY'),
+        api_secret: env('CLOUDINARY_SECRET'),
+      },
+      breakpoints: {
+        xlarge: 1920,
+        large: 1000,
+        medium: 750,
+        small: 500,
+        xsmall: 64,
+      },
+    },
+  },
+});
+*/
