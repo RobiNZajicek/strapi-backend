@@ -6,7 +6,8 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
+          // Přidána URL Strapi backendu do connect-src pro povolení API volání
+          'connect-src': ["'self'", 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
           'img-src': ["'self'", 'data:', 'blob:', 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
           'media-src': [
             "'self'",
@@ -25,7 +26,7 @@ module.exports = [
       formLimit: '20mb',
       jsonLimit: '20mb',
       textLimit: '20mb',
-    },
+    },  
   },
   // Zde je upravená konfigurace pro CORS
   {
@@ -36,7 +37,7 @@ module.exports = [
       // Přidány obě domény do povolených originů
       origin: [
         'https://praguestrikingacademy.cz',
-        'https://pv-projekt.vercel.app',
+        'https://pv-striking.vercel.app',
         'http://localhost:3000', // Můžeš přidat i localhost pro lokální vývoj
       ],
     },
