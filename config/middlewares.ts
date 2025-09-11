@@ -38,6 +38,7 @@ module.exports = [
       origin: [
         'https://praguestrikingacademy.cz',
         'https://pv-striking.vercel.app',
+        'https://strapi-backend-806198347052.europe-west3.run.app',
         'http://localhost:3000', // Můžeš přidat i localhost pro lokální vývoj
       ],
     },
