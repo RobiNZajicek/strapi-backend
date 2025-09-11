@@ -7,13 +7,13 @@ module.exports = [
         useDefaults: true,
         directives: {
           // Přidána URL Strapi backendu do connect-src pro povolení API volání
-          'connect-src': ["'self'", 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https:', 'https://strapi-backend-app-8zq2.onrender.com'],
+          'connect-src': ["'self'", 'https:', 'https://strapi-backend-806198347052.europe-west3.run.app'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https:', 'https://strapi-backend-806198347052.europe-west3.run.app'],
           'media-src': [
             "'self'",
             'data:',
             'blob:',
-            'https://strapi-backend-app-8zq2.onrender.com',
+            'https://strapi-backend-806198347052.europe-west3.run.app',
             // process.env.NEXT_PUBLIC_STRAPI_URL
           ],
         },
