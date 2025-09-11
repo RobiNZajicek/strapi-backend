@@ -13,6 +13,14 @@
             rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
           },
         },
+        pool: { 
+          min: 0, 
+          max: 10,
+          acquireTimeoutMillis: 60000,
+          createTimeoutMillis: 30000,
+          destroyTimeoutMillis: 5000,
+          idleTimeoutMillis: 30000,
+        },
         debug: false,
       },
     });
