@@ -1,16 +1,8 @@
     // strapi-api/config/database.js
-    module.exports = ({ env }) => {
-      console.log('🔧 Database config loading...');
-      console.log('📊 DB_HOST:', env('DATABASE_HOST'));
-      console.log('📊 DB_PORT:', env('DATABASE_PORT'));
-      console.log('📊 DB_NAME:', env('DATABASE_NAME'));
-      console.log('📊 DB_USER:', env('DATABASE_USERNAME'));
-      console.log('📊 DB_SSL:', env('DATABASE_SSL'));
-      
-      return {
+    module.exports = ({ env }) => ({
+      connection: {
+        client: 'postgres',
         connection: {
-          client: 'postgres',
-          connection: {
           host: env('DATABASE_HOST'),
           port: env.int('DATABASE_PORT', 5432),
           database: env('DATABASE_NAME'),
@@ -29,7 +21,6 @@
           destroyTimeoutMillis: 5000,
           idleTimeoutMillis: 30000,
         },
-        debug: true,
+        debug: false,
       },
-    };
-  };
+    });
