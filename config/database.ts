@@ -3,10 +3,10 @@
       connection: {
         client: 'postgres',
         connection: {
-          host: 'lllnjfhbqpajydjuvgwh.supabase.co',
-          port: 5432,
+          host: 'aws-1-eu-central-1.pooler.supabase.com',
+          port: 6543,
           database: 'postgres',
-          user: 'postgres',
+          user: 'postgres.lllnjfhbqpajydjuvgwh',
           password: 'CuLxRvYQIAdKRZel',
           ssl: {
             rejectUnauthorized: false,
