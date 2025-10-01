@@ -1,0 +1,21 @@
+name: Keep Alive
+
+on:
+  schedule:
+    # Runs every 3 minutes
+    - cron: '*/3 * * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Strapi
+        run: |
+          curl -f https://strapi-backend-app-8zq2.onrender.com/keep-alive || exit 1
+          echo "✅ Strapi is alive!"
+      
+      - name: Ping API
+        run: |
+          curl -f https://strapi-backend-app-8zq2.onrender.com/api/home-page || exit 1
+          echo "✅ API is responding!"
